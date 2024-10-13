@@ -1,6 +1,44 @@
 # калькулятор
 # импорт внутренний библиотеки
 import tkinter as tk
+# определение функций калькулятора:
+
+#   функция приема введенных данных
+def get_values():
+    num1 = int(number1_entry.get())
+    num2 = int(number2_entry.get())
+    return num1, num2
+
+#   функция вывода данных
+def insert_values(value):
+    answer_entry.delete(0, 'end')
+    answer_entry.insert(0, value)
+
+# функция сложения
+def add():
+    num1, num2 = get_values()
+    res = num1 + num2
+    insert_values(res)
+
+# функция вычетания
+def sub():
+    num1, num2 = get_values()
+    res = num1 - num2
+    insert_values(res)
+
+# функция деления
+def div():
+    num1, num2 = get_values()
+    res = num1 / num2
+    insert_values(res)
+
+# функция умножения
+def mul():
+    num1, num2 = get_values()
+    res = num1 * num2
+    insert_values(res)
+
+
 # окно
 window =tk.Tk()
 window.title('Калькулятор')
